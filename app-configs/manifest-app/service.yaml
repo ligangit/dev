@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: spring-boot-service
+  name: spring-boot-service-8081
   labels:
     test: test
     labele2: label
@@ -16,7 +16,7 @@ spec:
       protocol: TCP
       targetPort: 443
   selector:
-    run: spring-boot-sample
+    run: spring-boot-sample-8081
   sessionAffinity: None
   type: ClusterIP
 
