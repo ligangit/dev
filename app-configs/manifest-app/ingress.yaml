@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-wildcard-host
+spec:
+  rules:
+    - host: www.${HOST}
+      http:
+        paths:
+          - backend:
+              service:
+                name: spring-boot-service
+                port:
+                  number: 8080
+            path: /devops
+            pathType: Prefix
+
